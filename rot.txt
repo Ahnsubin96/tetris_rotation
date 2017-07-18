@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <windows.h>
+
+void origin()
+{
+	char a = 0;
+	for (a = 0; a < 8; a++)
+		printf("@");
+	printf("\n");
+	printf("@@бсбс@@\n");
+	printf("@@@@бсбс\n");
+	for (a = 0; a < 8; a++)
+		printf("@");
+	printf("\n");
+}
+void step1()
+{
+	char a = 0;
+	printf("@@@@бс@@\n");
+	printf("@@бсбс@@\n");
+	printf("@@бс@@@@\n");
+	for (a = 0; a < 8; a++)
+		printf("@");
+	printf("\n");
+}
+
+void step2()
+{
+	char a = 0;
+	for (a = 0; a < 8; a++)
+		printf("@");
+	printf("\n");
+	printf("бсбс@@@@\n");
+	printf("@@бсбс@@\n");
+	for (a = 0; a < 8; a++)
+		printf("@");
+	printf("\n");
+}
+
+void step3() {
+	char a = 0;
+	for (a = 0; a < 8; a++)
+		printf("@");
+	printf("\n");
+	printf("@@@@бс@@\n");
+	printf("@@бсбс@@\n");
+	printf("@@бс@@@@\n");
+}
+
+void main()
+{
+	char turn;
+	int i=0;
+	origin();
+	
+	while (1)
+	{
+		scanf_s("%c", &turn);
+		if (turn == 'r') {
+			i++;
+			if (i % 4 == 0)
+			{
+				system("cls");
+				origin();
+			}
+			else if (i % 4 == 1)
+			{
+				system("cls");
+				step1();
+			}
+			else if (i % 4 == 2)
+			{
+				system("cls");
+				step2();
+			}
+			else
+			{
+				system("cls");
+				step3();
+			}
+		}
+	}
+}
